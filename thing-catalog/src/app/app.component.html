@@ -1,5 +1,9 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/thing">Thing</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="ThingCatalog">
+  <appbar></appbar>
+  <nav>
+    <a routerLink="/thing">Thing</a>
+  </nav>
+  <div class="PageContent">
+    <router-outlet></router-outlet>
+  </div>
+</div>
