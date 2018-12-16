@@ -1,6 +1,11 @@
-.ThingCatalog {
-  --thing-catalog-primary-color: #123456;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.PageContent {
+:host {
+  font-family: Roboto;
+  display: grid;
+  grid-template-rows: max-content 100%;
+  grid-template-columns: 200px 100%;
+  height: 100%;
+  --thing-catalog-primary-color: #123456;
+  --thing-catalog-border-color: #e0e0e0;
 }

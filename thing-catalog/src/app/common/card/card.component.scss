@@ -1,0 +1,7 @@
+@import '../style/shadow.scss';
+
+.Card {
+  border: 1px solid var(--thing-catalog-border-color);
+  box-sizing: border-box;
+  box-shadow: $SHADOW_2DP;
+}

@@ -1,9 +1,13 @@
-.Appbar {
+@import '../style/shadow.scss';
+
+:host {
   align-items: center;
   background-color: var(--thing-catalog-primary-color);
+  box-shadow: $SHADOW_4DP;
   box-sizing: border-box;
   color: white;
   display: flex;
+  grid-column: 1 / -1;
   height: 40px;
   padding: 0px 16px;
   width: 100%;

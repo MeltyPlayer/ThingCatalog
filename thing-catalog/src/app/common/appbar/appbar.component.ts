@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
   selector: 'appbar',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appbar.component.scss']
 })
 export class AppbarComponent implements OnInit {
+
+  @HostBinding('attr.role') role = 'header';
 
   constructor() { }
 

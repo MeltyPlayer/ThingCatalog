@@ -1,0 +1,60 @@
+@function pow($number, $exponent) {
+  @if $exponent >= 0 {
+    $value: 1;
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+    @return $value;
+  }
+  @else {
+    @return 1 / pow($number, -$exponent);
+  }
+}
+
+@function box-shadow-at-elevation($elevation-dp) {
+  $x1: 0;
+  $y1: 1 * $elevation-dp;
+  $blur1: 0.21 + 1.61 * $elevation-dp;
+  $spread1: -0.23 + 0.15 * $elevation-dp;
+  $color1: rgba(0, 0, 0, 0.2);
+
+  $x2: 0;
+  $y2: 1.97 + 3.37 * $elevation-dp
+            - 2.81 * pow($elevation-dp, 2)
+            + 0.82 * pow($elevation-dp, 3)
+            - 0.117 * pow($elevation-dp, 4)
+            + 9.24 * pow(10, -3) * pow($elevation-dp, 5)
+            - 4.13 * pow(10, -4) * pow($elevation-dp, 6)
+            + 9.79 * pow(10, -6) * pow($elevation-dp, 7)
+            - 9.59 * pow(10, -8) * pow($elevation-dp, 8);
+  $blur2: 1.37 - 9.15 * $elevation-dp
+               + 9.79 * pow($elevation-dp, 2)
+               - 2.93 * pow($elevation-dp, 3)
+               + 0.428 * pow($elevation-dp, 4)
+               - 0.0345 * pow($elevation-dp, 5)
+               + 1.57 * pow(10, -3) * pow($elevation-dp, 6)
+               - 3.77 * pow(10, -5) * pow($elevation-dp, 7)
+               + 3.73 * pow(10, -7) * pow($elevation-dp, 8);
+  $spread2: -1.61 + 0.437 * $elevation-dp;
+  $color2: rgba(0, 0, 0, 0.13);
+
+  $x3: 0;
+  $y3: 1.1 + 0.455 * $elevation-dp;
+  $blur3: 3.23 + 3.07 * $elevation-dp
+               - 1.21 * pow($elevation-dp, 2)
+               + 0.193 * pow($elevation-dp, 3)
+               - 0.0142 * pow($elevation-dp, 4)
+               + 4.93 * pow(10, -4) * pow($elevation-dp, 5)
+               - 6.58 * pow(10, -6) * pow($elevation-dp, 6);
+  $spread3: -0.0567 - 0.314 * $elevation-dp;
+  $color3: rgba(0, 0, 0, 0.12);
+
+  @return $x1 * 1px $y1 * 1px $blur1 * 1px $spread1 * 1px $color1,
+          $x2 * 1px $y2 * 1px $blur2 * 1px $spread2 * 1px $color2,
+          $x3 * 1px $y3 * 1px $blur3 * 1px $spread3 * 1px $color3;
+}
+
+$SHADOW_0DP: box-shadow-at-elevation(0);
+$SHADOW_2DP: box-shadow-at-elevation(2);
+$SHADOW_4DP: box-shadow-at-elevation(4);
+$SHADOW_16DP: box-shadow-at-elevation(16);
