@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 :host {
+  --thing-catalog-primary-color: #123456;
+  --thing-catalog-secondary-color: #f0f0f0;
+  --thing-catalog-border-color: #e0e0e0;
   font-family: Roboto;
   display: grid;
-  grid-template-rows: max-content 100%;
-  grid-template-columns: 200px 100%;
-  height: 100%;
-  --thing-catalog-primary-color: #123456;
-  --thing-catalog-border-color: #e0e0e0;
+  grid-template-rows: max-content auto;
+  grid-template-columns: max-content auto;
+  height: 100vh;
+  width: 100vw;
 }
