@@ -1,14 +1,17 @@
 @import '../style/shadow.scss';
 
+$appbar-height: 40px;
+
 :host {
-  align-items: center;
   background-color: var(--thing-catalog-primary-color);
   box-shadow: $SHADOW_4DP;
   box-sizing: border-box;
   color: white;
-  display: flex;
+  font-size: 28px;
+  font-weight: bold;
   grid-column: 1 / -1;
-  height: 40px;
+  height: $appbar-height;
+  line-height: $appbar-height;
   padding: 0px 16px;
   width: 100%;
   z-index: 1;
